@@ -43,7 +43,7 @@ const Layout=({children})=> {
         </div>
 
 		<div className="profile-info">
-			<h3 className="profile-name">{name}</h3>
+			<p className="profile-name">{name}</p>
 		</div>
 	</div>
 
