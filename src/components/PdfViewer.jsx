@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect } from "react";
 import {Modal, Button} from "antd";
 import {ZoomInOutlined, ZoomOutOutlined} from '@ant-design/icons';
 import PDF from "react-pdf-js";
@@ -8,6 +8,24 @@ const PdfViewer = ({pdf, onCancel, visible})=> {
     const [page, setPage] = useState(1);
     const [pages, setPages] = useState(null);
     const [scale, setScale] = useState(1);
+
+    const [screenwidth, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+
+
+  const modalWidth = screenwidth > 700 ? '60vw' : '90vw';
   
     const onDocumentComplete = (numPages) =>{
       setPages(numPages)
@@ -49,7 +67,7 @@ const PdfViewer = ({pdf, onCancel, visible})=> {
         cursor: 'pointer'
     }
 
-    const footer = <div className="footer">
+    const footer = <div className="footer" style={{display:"flex", justifyContent:"space-between"}}>
        <Button onClick={()=>onPage(0)}>Previous</Button>
        <div>
        <span style={{textAlign: 'center'}}>Page {page} of {pages}</span>
@@ -63,8 +81,8 @@ const PdfViewer = ({pdf, onCancel, visible})=> {
     return (<Modal maskClosable={false}
                    onCancel={onCancel}
                    visible={visible}
-                   width={"50%"}
-                   bodyStyle={{height: 550, overflowY: 'auto'}}
+                   width={modalWidth}
+                   bodyStyle={{height: 500, overflowY: 'auto'}}
                    style={{ top: 20 }}
                    footer={footer}
                 
