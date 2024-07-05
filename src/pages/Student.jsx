@@ -79,7 +79,7 @@ const onAppliedJob=()=>{
                     <div className='headerContent' style={{fontWeight:'bolder', fontSize:'20px'}}>Available Jobs</div>
                     <div className='rightContent' style={{width:'80%', display:'flex', justifyContent:'space-around'}}>
                       <div>
-                        <Search placeholder="search by location, job, compnay" onChange={handleChange} enterButton style={{width:350}}/>
+                        <Search placeholder="search by location, job, compnay" onChange={handleChange} enterButton/>
                       </div>
                       <Link to="/appliedJobs" style={{ textDecoration: 'none', color:'black' }}>Applied Jobs</Link>
                     </div>

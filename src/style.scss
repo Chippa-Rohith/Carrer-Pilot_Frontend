@@ -913,6 +913,7 @@ body::-webkit-scrollbar{
   flex-direction: column;
   align-items: center;
   width: 50%;
+  justify-content: center;
 }
 
 .auth-form-section.signup
@@ -921,6 +922,7 @@ body::-webkit-scrollbar{
     padding-bottom: 10%;
     height: 100vh;
     overflow-y: scroll;
+    justify-content: start;
 }
 
 
@@ -1031,6 +1033,14 @@ body::-webkit-scrollbar{
 
 .profile-info{
     margin-top: -1rem;
+}
+
+.card .cardheader{
+    flex-direction: column-reverse;
+}
+
+.cardheader .headerContent{
+    margin-top: 1rem;
 }
 
 }

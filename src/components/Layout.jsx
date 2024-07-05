@@ -13,6 +13,7 @@ const Layout=({children})=> {
     const name=firstname+" "+lastname
     const email=user?.Email? user.Email:"Dummy@email.com"
     const contact=user?.PhoneNumber? user.PhoneNumber:"dummycontact"
+    const role=user?.Role? user.Role:"dummyRole"
 
   return (
     <div className='layout'>
@@ -22,8 +23,7 @@ const Layout=({children})=> {
             </div>
             <div className="rightNav">
                 <div className="Avatar">
-                    <img src={`https://api.dicebear.com/6.x/pixel-art/jpg?seed=${username}`} alt="user"/>
-                    <div className="text">{username}</div>
+                    <div className="text">{role}</div>
                 </div>
                 <ul className='sideBar'>
                 </ul>

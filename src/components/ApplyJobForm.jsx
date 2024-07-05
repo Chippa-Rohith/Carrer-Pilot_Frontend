@@ -56,8 +56,11 @@ const ApplyJobForm=({
             payload:formItem,
         })
         setLoading(false)
-        if(response){
-            setResumeUrl(response.data.url)
+        if (response) {
+            const url = response.data.url;
+            const secureUrl = url.replace(/^http:\/\//i, 'https://');
+            console.log(secureUrl)
+            setResumeUrl(secureUrl);
         }
     }
 
