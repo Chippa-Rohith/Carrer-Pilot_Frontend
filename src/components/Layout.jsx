@@ -19,7 +19,7 @@ const Layout=({children})=> {
     <div className='layout'>
         <div className='header'>
             <div className="brand">
-                CarrerPiolt
+                HireHub
             </div>
             <div className="rightNav">
                 <div className="Avatar">
