@@ -7,7 +7,7 @@ const LandingPage = () => {
   return (
     <div className="landing-page-container">
       <nav className="landing-page-nav">
-        <h1 className="landing-page-title">CareerPilot</h1>
+        <h1 className="landing-page-title">HireHub</h1>
         <div className="landing-page-nav-buttons">
           <Link to={'/login'}>
             <Button type="primary" size="large" className="landing-page-nav-button">Login</Button>
