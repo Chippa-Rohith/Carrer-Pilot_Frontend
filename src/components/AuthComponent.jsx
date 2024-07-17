@@ -51,7 +51,9 @@ const AuthComponent = ({
         <div className="auth-inner">
           <div className="auth-header">
             <h3>{title}</h3>
-            <h2>CareerPilot</h2>
+            <h2>
+              <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>HireHub</a>
+            </h2>
           </div>
           <Form layout="vertical" onFinish={onSubmit}>
             <Form.Item
